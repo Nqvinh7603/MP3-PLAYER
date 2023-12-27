@@ -85,17 +85,7 @@ window.addEventListener("load", function () {
   const progressBar = document.querySelector("#progress-bar");
   const playerImage = document.querySelector(".player-image");
   let playing = false; // Set initial state to paused
-  const list = [
-    "holo.mp3",
-    "vu.mp3",
-    "summer.mp3",
-    "home.mp3",
-    "spark.mp3",
-    "tungquen.mp3",
-    "nolovenolife.mp3",
-    "deaican.mp3",
-    "chiucachminhnoithua.mp3",
-  ];
+  const list = ["holo.mp3", "summer.mp3", "home.mp3", "spark.mp3", "vu.mp3"];
   let songIndex = 0;
 
   playButton.addEventListener("click", handleMusicPlay);
