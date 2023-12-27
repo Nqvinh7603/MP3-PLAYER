@@ -22,11 +22,8 @@ window.addEventListener("load", function () {
       //Bài nhạc tiếp theo
       songIdx++;
       if (songIdx > list.length - 1) {
-        songIdx = 0;
       }
-      song.setAttribute("src", `./files/${list[songIdx]}`);
-      playing = true;
-      handleMusicPlay();
+      song.setAttribute("src", "./files/${list[songIdx]}");
     } else if (direction == -1) {
       //Bài nhạc trước đó
     }

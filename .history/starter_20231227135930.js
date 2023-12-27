@@ -24,8 +24,7 @@ window.addEventListener("load", function () {
       if (songIdx > list.length - 1) {
         songIdx = 0;
       }
-      song.setAttribute("src", `./files/${list[songIdx]}`);
-      playing = true;
+      song.setAttribute("src", "./files/${list[songIdx]}");
       handleMusicPlay();
     } else if (direction == -1) {
       //Bài nhạc trước đó
