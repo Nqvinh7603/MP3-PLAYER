@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
     if (direction == 1) {
       //Bài nhạc tiếp theo
       songIdx++;
-      song.setAttribute("src", "./files/${list[songIdx]}");
+      song.setAttribute;
     } else if (direction == -1) {
       //Bài nhạc trước đó
     }

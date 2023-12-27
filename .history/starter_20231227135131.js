@@ -11,21 +11,6 @@ window.addEventListener("load", function () {
   const list = ["holo.mp3", "summer.mp3", "home.mp3", "spark.mp3"];
   let songIdx = 0;
   playButton.addEventListener("click", handleMusicPlay);
-  nextButton.addEventListener("click", function () {
-    handleChangeMusic(1);
-  });
-  prevButton.addEventListener("click", function () {
-    handleChangeMusic(-1);
-  });
-  function handleChangeMusic(direction) {
-    if (direction == 1) {
-      //Bài nhạc tiếp theo
-      songIdx++;
-      song.setAttribute("src", "./files/${list[songIdx]}");
-    } else if (direction == -1) {
-      //Bài nhạc trước đó
-    }
-  }
   function handleMusicPlay() {
     if (playing) {
       song.play();

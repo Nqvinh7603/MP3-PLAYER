@@ -20,8 +20,6 @@ window.addEventListener("load", function () {
   function handleChangeMusic(direction) {
     if (direction == 1) {
       //Bài nhạc tiếp theo
-      songIdx++;
-      song.setAttribute("src", "./files/${list[songIdx]}");
     } else if (direction == -1) {
       //Bài nhạc trước đó
     }

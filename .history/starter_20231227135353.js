@@ -15,13 +15,11 @@ window.addEventListener("load", function () {
     handleChangeMusic(1);
   });
   prevButton.addEventListener("click", function () {
-    handleChangeMusic(-1);
+    handleChangeMusic(1);
   });
   function handleChangeMusic(direction) {
     if (direction == 1) {
       //Bài nhạc tiếp theo
-      songIdx++;
-      song.setAttribute("src", "./files/${list[songIdx]}");
     } else if (direction == -1) {
       //Bài nhạc trước đó
     }
