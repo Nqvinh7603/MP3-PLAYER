@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
   const playerImage = document.querySelector(".player-image");
   let playing = true;
   const list = ["holo.mp3", "summer.mp3", "home.mp3", "spark.mp3"];
-  let songIndex = 0;
+  let songIdx = 0;
   playButton.addEventListener("click", handleMusicPlay);
   nextButton.addEventListener("click", function () {
     handleChangeMusic(1);
@@ -20,21 +20,23 @@ window.addEventListener("load", function () {
   song.addEventListener("ended", function () {
     handleChangeMusic(1);
   });
-  function handleChangeMusic(dir) {
-    if (dir === 1) {
-      songIndex++;
-      if (songIndex > list.length - 1) {
-        songIndex = 0;
+  function handleChangeMusic(direction) {
+    if (direction == 1) {
+      //Bài nhạc tiếp theo
+      songIdx++;
+      if (songIdx > list.length - 1) {
+        songIdx = 0;
       }
-      song.setAttribute("src", `./files/${list[songIndex]}`);
+      song.setAttribute("src", `./files/${list[songIdx]}`);
       playing = true;
       handleMusicPlay();
-    } else if (dir === -1) {
-      songIndex--;
-      if (songIndex < 0) {
-        songIndex = list.length - 1;
+    } else if (direction == -1) {
+      //Bài nhạc trước đó
+      songIdx--;
+      if (songIdx < 0) {
+        songIdx = list.length - 1;
       }
-      song.setAttribute("src", `./files/${list[songIndex]}`);
+      song.setAttribute("src", `./files/${list[songIdx]}`);
       playing = true;
       handleMusicPlay();
     }
@@ -52,26 +54,6 @@ window.addEventListener("load", function () {
       playing = true;
     }
   }
-  function displayTimer() {
-    const { duration, currentTime } = song;
-    progressBar.max = duration;
-    progressBar.value = currentTime;
-    remaining.textContent = formatTimer(currentTime);
-    if (!duration) {
-      playerDuration.textContent = "0:00";
-    } else {
-      playerDuration.textContent = formatTimer(duration);
-    }
-  }
-  function formatTimer(number) {
-    const minutes = Math.floor(number / 60);
-    const seconds = Math.floor(number - minutes * 60);
-    return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-  }
-  progressBar.addEventListener("change", handleDragProgressBar);
-  function handleDragProgressBar() {
-    song.currentTime = progressBar.value;
-  }
-  displayTimer();
-  const timer = setInterval(displayTimer, 500);
+  function displayTimer() {}
+  const timer = this.setInterval(function () {});
 });

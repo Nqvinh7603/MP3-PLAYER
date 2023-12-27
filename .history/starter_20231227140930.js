@@ -17,6 +17,9 @@ window.addEventListener("load", function () {
   prevButton.addEventListener("click", function () {
     handleChangeMusic(-1);
   });
+  song.addEventListener("ended", function () {
+    handleChangeMusic(1);
+  });
   function handleChangeMusic(direction) {
     if (direction == 1) {
       //Bài nhạc tiếp theo
@@ -51,4 +54,5 @@ window.addEventListener("load", function () {
       playing = true;
     }
   }
+  function displayTimer() {}
 });
