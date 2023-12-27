@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
     } else if (direction == -1) {
       //Bài nhạc trước đó
       songIdx--;
-      if (songIdx < 0) {
+      if (songIdx <= 0) {
         songIdx = list.length - 1;
       }
       song.setAttribute("src", `./files/${list[songIdx]}`);

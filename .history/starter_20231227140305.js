@@ -29,13 +29,8 @@ window.addEventListener("load", function () {
       handleMusicPlay();
     } else if (direction == -1) {
       //Bài nhạc trước đó
-      songIdx--;
-      if (songIdx < 0) {
-        songIdx = list.length - 1;
+      if (songIdx <= 0) {
       }
-      song.setAttribute("src", `./files/${list[songIdx]}`);
-      playing = true;
-      handleMusicPlay();
     }
   }
   function handleMusicPlay() {
